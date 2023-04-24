@@ -1,0 +1,19 @@
+// Define the LED and button pins
+int ledPin = D7;
+int buttonPin = D2;
+
+// Set the LED pin as an output
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+// Toggle the LED whenever the button is pressed
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {  // check if button is pressed
+    digitalWrite(ledPin, HIGH);         // turn on LED
+    delay(500);                         // wait for half a second
+    digitalWrite(ledPin, LOW);          // turn off LED
+    delay(500);                         // wait for half a second
+  }
+}
